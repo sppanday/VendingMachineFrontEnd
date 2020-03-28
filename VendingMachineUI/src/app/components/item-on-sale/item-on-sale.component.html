@@ -1,7 +1,4 @@
 
-<mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
+<mat-grid-list cols="3" rowHeight="2:1" >
+  <mat-grid-tile *ngFor="let item of itemList">{{item.itemName}}</mat-grid-tile>
 </mat-grid-list>
