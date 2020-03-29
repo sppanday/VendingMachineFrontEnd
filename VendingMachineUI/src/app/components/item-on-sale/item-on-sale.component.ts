@@ -1,24 +1,39 @@
-import { SharedService } from './../../shared.service';
-import { Observable } from 'rxjs';
-import {map} from 'rxjs/operators';
 import { SaleItems } from './../../modal/saleItem.info';
 import { Component, OnInit } from '@angular/core';
-
+import { map } from 'rxjs/operators';
+import { SharedService } from '../../shared/product.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 @Component({
   selector: 'app-item-on-sale',
   templateUrl: './item-on-sale.component.html',
   styleUrls: ['./item-on-sale.component.scss']
 })
 export class ItemOnSaleComponent implements OnInit {
-  itemList: SaleItems[];
+  itemList = [];
+  countValue = 0;
+
 
   constructor(
     private sharedService: SharedService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.sharedService.getAllItems()
     .pipe(map(data => this.itemList = data)).subscribe();
   }
 
+  getCurrency() {
+    return 'AUD';
+  }
+
+  addItem(item: SaleItems) {
+   this.countItem++;
+   this.itemsInCartSubject.next([...this.itemsInCart, item]);
+  }
+
+  removeItem() {
+    if (this.countItem > 0) {
+      this.countItem--;
+    }
+  }
 }

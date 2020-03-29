@@ -2,6 +2,7 @@
 export interface SaleItems {
     itemId?: number;
     itemName?: string;
+    countItem?: number;
     price?: number;
     numOfItems?: number;
     numOfItemsAvailable?: number;

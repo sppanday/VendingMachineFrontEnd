@@ -1,3 +1,30 @@
 mat-grid-tile {
     background: lightblue;
   }
+input {
+  width: 25px;
+}
+.selectedItem {
+  display: -webkit-box;
+  position: absolute;
+  margin-top: 170px;
+}
+mat-grid-list {
+  margin: 10px;
+}
+img {
+  width: 300px;
+  height: 300px;
+}
+strong {
+  font-family: monospace;
+  font-size: 20px;
+  white-space: pre;
+  left: 40px;
+  bottom: 30px;
+  position: absolute;
+}
+.itemPrice {
+  margin-top: 10px;
+  margin-right: 10px;
+}

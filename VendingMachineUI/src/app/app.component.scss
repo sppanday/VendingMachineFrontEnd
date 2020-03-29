@@ -1,0 +1,21 @@
+.banner {
+    background: lightslategray;
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    &search {
+     height: 20px;
+     width: 20px;
+    }
+}
+.loading {
+top: 50%;
+left: 50%;
+vertical-align: middle;
+}
+i.fa.fa-shopping-cart {
+    float: right;
+    margin-right:50px;
+}

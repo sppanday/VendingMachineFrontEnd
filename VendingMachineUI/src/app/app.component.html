@@ -1,2 +1,14 @@
-<app-search></app-search>
-<app-item-on-sale></app-item-on-sale>
+<ng-container *ngIf="loading; else progressSpinner">
+    <div class="banner">
+    <h1 class="banner title">Vending Machine</h1>
+    <p class="banner contact"><i class="fas fa-sound"></i></p>
+   </div>
+   <i class="fa fa-shopping-cart" id="cart">  {{(shoppingCartItems | async).length}}</i>
+   <app-search class="banner search"></app-search>
+    <app-item-on-sale></app-item-on-sale>
+</ng-container>
+<ng-template #progressSpinner>
+    <mat-progress-spinner mode="indeterminate" color="primary">
+        <h1 style="margin-top:20%; margin-left:20%;">...Loading</h1> 
+       </mat-progress-spinner>
+</ng-template>
