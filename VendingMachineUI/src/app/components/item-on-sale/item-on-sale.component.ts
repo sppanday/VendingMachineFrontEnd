@@ -1,7 +1,7 @@
 import { SaleItems } from './../../modal/saleItem.info';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { SharedService } from '../../shared/product.service';
+import { SharedService } from '../../shared/shared.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 @Component({
   selector: 'app-item-on-sale',
@@ -11,7 +11,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class ItemOnSaleComponent implements OnInit {
   itemList = [];
   countValue = 0;
-
+  loadingSpinner = this.sharedService.loading.asObservable();
 
   constructor(
     private sharedService: SharedService

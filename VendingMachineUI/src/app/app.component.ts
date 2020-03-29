@@ -1,3 +1,4 @@
+import { SharedService } from './shared/shared.service';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { SaleItems } from './modal/saleItem.info';
@@ -10,18 +11,15 @@ import { CartService } from './shared/cart.service';
 })
 
 export class AppComponent implements OnInit {
-  public loading = new BehaviorSubject<boolean>(false);
-  public loadSpinner = this.loading.asObservable();
   shoppingCartItems: Observable<SaleItems[]>;
   cartProductList = [];
  constructor(
    private cartService: CartService
  ) {
-   this.loading.next(false);
  }
  ngOnInit() {
 this.shoppingCartItems = this.cartService.getItemOnCart();
-this.shoppingCartItems.subscribe();
+
  }
 
  addProductToCart(product) {
