@@ -1,4 +1,3 @@
-import { map } from 'rxjs/operator';
 import { SaleItems } from './../modal/saleItem.info';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
@@ -16,11 +15,12 @@ constructor() {
     getItemOnCart(): Observable<SaleItems[]> {
         return this.itemsInCartSubject;
        }
-    getTotalAmount(): Observable<number>{
-     return this.itemsInCartSubject.map((items: SaleItems[]) => {
+    getTotalAmount(): Observable<number> {
+     /* return this.itemsInCartSubject.map((items: SaleItems[]) => {
          return items.reduce((prev, curr: SalesItems)) => {
              return prev + curr.price;
          }, 0);
-     })
+     }) */
+         return;
     }
 }

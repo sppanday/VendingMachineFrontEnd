@@ -25,15 +25,4 @@ export class ItemOnSaleComponent implements OnInit {
   getCurrency() {
     return 'AUD';
   }
-
-  addItem(item: SaleItems) {
-   this.countItem++;
-   this.itemsInCartSubject.next([...this.itemsInCart, item]);
-  }
-
-  removeItem() {
-    if (this.countItem > 0) {
-      this.countItem--;
-    }
-  }
 }
